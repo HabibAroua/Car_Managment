@@ -15,3 +15,15 @@ C:\Users\lenovo\documents\visual studio 2015\Projects\Car Managment System\Car M
 C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\bin\Debug\Car Managment System.exe.config
 C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car Managment System.exe
 C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car Managment System.pdb
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\bin\Debug\Car Managment System.exe
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\bin\Debug\Car Managment System.pdb
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\bin\Debug\MetroFramework.dll
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car Managment System.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.Form1.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.Properties.Resources.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.Car_Managment.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.Index.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.Suscribecs.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car Managment System.csproj.GenerateResource.Cache
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.AddCar.resources

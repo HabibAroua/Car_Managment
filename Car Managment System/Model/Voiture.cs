@@ -37,13 +37,12 @@ namespace Car_Managment_System.Model
         public Voiture()
         { }
 
-        public Voiture(String reference, String marque, String carburant, int prixParJour, int prixTotal)
+        public Voiture(String reference, String marque, String carburant, int prixParJour)
         {
             this.reference = reference;
             this.marque = marque;
             this.carburant = carburant;
             this.prixParJour = prixParJour;
-            this.prixTotal = prixTotal;
         }
     }
 }

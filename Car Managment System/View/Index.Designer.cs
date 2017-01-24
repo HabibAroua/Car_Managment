@@ -44,6 +44,7 @@
             this.metroTile1.Size = new System.Drawing.Size(115, 89);
             this.metroTile1.TabIndex = 0;
             this.metroTile1.Text = "Car Managment";
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
             // metroTile2
             // 

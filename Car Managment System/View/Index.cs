@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using Car_Managment_System.View;
 
 namespace Car_Managment_System.View
 {
@@ -16,6 +17,13 @@ namespace Car_Managment_System.View
         public Index()
         {
             InitializeComponent();
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            Car_Managment cm = new Car_Managment();
+            cm.Show();
+            this.Hide();
         }
     }
 }

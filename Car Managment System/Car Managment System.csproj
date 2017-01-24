@@ -61,9 +61,18 @@
     <Compile Include="Controller\CompteController.cs" />
     <Compile Include="Controller\Crud.cs" />
     <Compile Include="Controller\Cryptage.cs" />
+    <Compile Include="Controller\PLSQL.cs" />
     <Compile Include="Controller\UtilisateurController.cs" />
+    <Compile Include="Controller\VoitureController.cs" />
     <Compile Include="Model\Compte.cs" />
     <Compile Include="Model\Utilisateur.cs" />
+    <Compile Include="Model\Voiture.cs" />
+    <Compile Include="View\AddCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddCar.Designer.cs">
+      <DependentUpon>AddCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Authentification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +99,9 @@
     <Compile Include="View\Suscribecs.Designer.cs">
       <DependentUpon>Suscribecs.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AddCar.resx">
+      <DependentUpon>AddCar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
     </EmbeddedResource>
