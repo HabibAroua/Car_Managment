@@ -15,6 +15,13 @@ namespace Car_Managment_System.Controller
         {
 
         }
+
+        public Boolean remove(Object o)
+        {
+            
+            return true;
+        }
+
         public Boolean add(Object o)
         {
             try
@@ -42,5 +49,6 @@ namespace Car_Managment_System.Controller
                 return false;
             }
         }
+        
     }
 }

@@ -28,17 +28,49 @@ namespace Car_Managment_System.View
 
         private void Car_Managment_Load(object sender, EventArgs e)
         {
+            Refresh_();
+        }
+
+        private void Refresh_()
+        {
             VoitureController vc = new VoitureController();
             List<Voiture> list = vc.SelectAll();
-            foreach (Voiture v in list)
+            dataGridView1.DataSource = vc.Select();
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            VoitureController vc = new VoitureController();
+            DialogResult a = MessageBox.Show("Voulez vous supprimer", "Message", MessageBoxButtons.YesNo);
+            if (a == DialogResult.Yes)
             {
-                ListViewItem lv = new ListViewItem(v.reference.ToString());
-                lv.SubItems.Add(v.marque);
-                lv.SubItems.Add(v.carburant);
-                lv.SubItems.Add(v.prixParJour.ToString());
-                dataGridView1.Rows.Add(v.reference.ToString(), v.marque, v.carburant, v.prixParJour.ToString());
-                
+                string reference = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                Boolean test=vc.remove(reference);
+                if(test==true)
+                {
+                    MessageBox.Show("Cette voiture est déjà supprimé", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Erreur de duppression", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            else
+            {
+                MessageBox.Show("Annuler de supprimer cette voiture","Message",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+            }
+            
+        }
+
+        private void btRefrersh_Click(object sender, EventArgs e)
+        {
+            Refresh_();
+        }
+
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateCar u = new UpdateCar();
+            u.Show();
         }
     }
 }

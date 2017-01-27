@@ -9,5 +9,6 @@ namespace Car_Managment_System.Controller
     public interface Crud
     {
         Boolean add(Object o);
+        Boolean remove(Object o);
     }
 }

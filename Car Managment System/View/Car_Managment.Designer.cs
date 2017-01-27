@@ -28,26 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtSearch = new MetroFramework.Controls.MetroTextBox();
             this.btAdd = new MetroFramework.Controls.MetroTile();
             this.btDelete = new MetroFramework.Controls.MetroTile();
             this.btUpdate = new MetroFramework.Controls.MetroTile();
             this.btRefrersh = new MetroFramework.Controls.MetroTile();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Carburant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prixParJour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // metroTextBox1
+            // txtSearch
             // 
-            this.metroTextBox1.Location = new System.Drawing.Point(93, 154);
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.Size = new System.Drawing.Size(159, 23);
-            this.metroTextBox1.TabIndex = 0;
+            this.txtSearch.Location = new System.Drawing.Point(93, 154);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(159, 23);
+            this.txtSearch.TabIndex = 0;
             // 
             // btAdd
             // 
@@ -66,6 +62,7 @@
             this.btDelete.Size = new System.Drawing.Size(75, 66);
             this.btDelete.TabIndex = 2;
             this.btDelete.Text = "Delete";
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btUpdate
             // 
@@ -74,6 +71,7 @@
             this.btUpdate.Size = new System.Drawing.Size(75, 66);
             this.btUpdate.TabIndex = 3;
             this.btUpdate.Text = "Update";
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // btRefrersh
             // 
@@ -82,39 +80,7 @@
             this.btRefrersh.Size = new System.Drawing.Size(75, 66);
             this.btRefrersh.TabIndex = 4;
             this.btRefrersh.Text = "Refresh";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Reference,
-            this.Marque,
-            this.Carburant,
-            this.prixParJour});
-            this.dataGridView1.Location = new System.Drawing.Point(39, 209);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(440, 166);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // Reference
-            // 
-            this.Reference.HeaderText = "Reference";
-            this.Reference.Name = "Reference";
-            // 
-            // Marque
-            // 
-            this.Marque.HeaderText = "marque";
-            this.Marque.Name = "Marque";
-            // 
-            // Carburant
-            // 
-            this.Carburant.HeaderText = "Carburant";
-            this.Carburant.Name = "Carburant";
-            // 
-            // prixParJour
-            // 
-            this.prixParJour.HeaderText = "Prix par jour";
-            this.prixParJour.Name = "prixParJour";
+            this.btRefrersh.Click += new System.EventHandler(this.btRefrersh_Click);
             // 
             // metroLabel1
             // 
@@ -125,18 +91,28 @@
             this.metroLabel1.TabIndex = 6;
             this.metroLabel1.Text = "Search";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView1.Location = new System.Drawing.Point(39, 206);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(426, 150);
+            this.dataGridView1.TabIndex = 8;
+            // 
             // Car_Managment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 409);
-            this.Controls.Add(this.metroLabel1);
+            this.ClientSize = new System.Drawing.Size(573, 409);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btRefrersh);
             this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btAdd);
-            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.txtSearch);
             this.Name = "Car_Managment";
             this.Text = "Car Managment";
             this.Load += new System.EventHandler(this.Car_Managment_Load);
@@ -148,16 +124,12 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox txtSearch;
         private MetroFramework.Controls.MetroTile btAdd;
         private MetroFramework.Controls.MetroTile btDelete;
         private MetroFramework.Controls.MetroTile btUpdate;
         private MetroFramework.Controls.MetroTile btRefrersh;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Reference;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Marque;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Carburant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prixParJour;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -17,6 +17,7 @@ namespace Car_Managment_System.Controller
 
         }
 
+
         public Boolean add(Object o)
         {
             Voiture v = (Voiture)o;
@@ -42,6 +43,28 @@ namespace Car_Managment_System.Controller
 
         }
 
+        public Boolean remove(Object o)
+        {
+            try
+            {
+                OleDbConnection cn = new OleDbConnection();
+                cn.ConnectionString = Properties.Settings.Default.ch;
+                OleDbCommand cmd = new OleDbCommand();
+                String reference = (String)o;
+                string req = string.Format(" delete Voiture where reference='" + reference + "' ");
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.CommandText = req;
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                return true;
+            }
+            catch(OleDbException)
+            {
+                return true;
+            }
+        }
+
         public List<Voiture> SelectAll()
         {
             List<Voiture> listVoiture = new List<Voiture>();
@@ -52,7 +75,7 @@ namespace Car_Managment_System.Controller
             while (Reader.Read())
             {
                 decimal n = Reader.GetDecimal(3);
-                Voiture v = new Voiture(Reader.GetString(0), Reader.GetString(1), Reader.GetString(2),(int) n);
+                Voiture v = new Voiture(Reader.GetString(0), Reader.GetString(1), Reader.GetString(2), (int)n);
 
                 listVoiture.Add(v);
 
@@ -60,8 +83,38 @@ namespace Car_Managment_System.Controller
             Reader.Close();
             cn.Close();
             return listVoiture;
+        }
 
+        public List<Voiture> Search(String r)
+        {
+            List<Voiture> listVoiture = new List<Voiture>();
+            string req = string.Format("SELECT reference , marque , carburant , prixparjour  FROM Voiture where marque like LOWER('%"+r+ "') or marque like UPPER('%" + r + "') ");
+            cn.Open();
+            OleDbCommand cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                decimal n = Reader.GetDecimal(3);
+                Voiture v = new Voiture(Reader.GetString(0), Reader.GetString(1), Reader.GetString(2), (int)n);
 
+                listVoiture.Add(v);
+
+            }
+            Reader.Close();
+            cn.Close();
+            return listVoiture;
+        }
+
+        public DataTable Select()
+        {
+            OleDbDataAdapter adap1;
+            DataTable tab1;
+            adap1 = new OleDbDataAdapter("select Reference , Marque , Carburant , PrixParJour  From Voiture ", Properties.Settings.Default.ch);
+            DataSet dtst = new DataSet();
+            adap1.Fill(dtst, "Voiture");
+            tab1 = dtst.Tables["Voiture"];
+            return  tab1;
+            
         }
 
 
