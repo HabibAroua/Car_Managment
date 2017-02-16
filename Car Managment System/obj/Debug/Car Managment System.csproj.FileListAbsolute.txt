@@ -27,3 +27,11 @@ C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Ca
 C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.Suscribecs.resources
 C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car Managment System.csproj.GenerateResource.Cache
 C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.AddCar.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.UpdateCar.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.Clients_Managment.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.Organization_Managment.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.Client_Managment.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.Add_Organization.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.Clients_View.Organization_View.Uppdate_Organization.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.Clients_View.Client_View.AddClient.resources
+C:\Users\lenovo\Documents\GitHub\Car_Managment\Car Managment System\obj\Debug\Car_Managment_System.View.Clients_View.Client_View.UpdateClient.resources

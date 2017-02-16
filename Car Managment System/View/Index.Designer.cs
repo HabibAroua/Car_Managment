@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.ClientTitle = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btExist = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,13 +47,14 @@
             this.metroTile1.Text = "Car Managment";
             this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
-            // metroTile2
+            // ClientTitle
             // 
-            this.metroTile2.Location = new System.Drawing.Point(224, 94);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(124, 89);
-            this.metroTile2.TabIndex = 1;
-            this.metroTile2.Text = "Client Mangment";
+            this.ClientTitle.Location = new System.Drawing.Point(224, 94);
+            this.ClientTitle.Name = "ClientTitle";
+            this.ClientTitle.Size = new System.Drawing.Size(124, 89);
+            this.ClientTitle.TabIndex = 1;
+            this.ClientTitle.Text = "Client Mangment";
+            this.ClientTitle.Click += new System.EventHandler(this.ClientTitle_Click);
             // 
             // metroTile3
             // 
@@ -79,16 +81,26 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // btExist
+            // 
+            this.btExist.Location = new System.Drawing.Point(728, 41);
+            this.btExist.Name = "btExist";
+            this.btExist.Size = new System.Drawing.Size(86, 31);
+            this.btExist.TabIndex = 5;
+            this.btExist.Text = "Exist";
+            this.btExist.Click += new System.EventHandler(this.btExist_Click);
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(875, 374);
+            this.Controls.Add(this.btExist);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile3);
-            this.Controls.Add(this.metroTile2);
+            this.Controls.Add(this.ClientTitle);
             this.Controls.Add(this.metroTile1);
             this.Name = "Index";
             this.Text = "Welcome";
@@ -101,9 +113,10 @@
         #endregion
 
         private MetroFramework.Controls.MetroTile metroTile1;
-        private MetroFramework.Controls.MetroTile metroTile2;
+        private MetroFramework.Controls.MetroTile ClientTitle;
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroButton btExist;
     }
 }

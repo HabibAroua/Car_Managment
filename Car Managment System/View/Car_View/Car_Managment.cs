@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using Car_Managment_System.Controller;
-using Car_Managment_System.Model;
 
 namespace Car_Managment_System.View
 {
     public partial class Car_Managment : MetroForm
     {
+        VoitureController vc = new VoitureController();
         public Car_Managment()
         {
             InitializeComponent();
@@ -33,20 +26,17 @@ namespace Car_Managment_System.View
 
         private void Refresh_()
         {
-            VoitureController vc = new VoitureController();
-            List<Voiture> list = vc.SelectAll();
             dataGridView1.DataSource = vc.Select();
         }
 
         private void btDelete_Click(object sender, EventArgs e)
         {
-            VoitureController vc = new VoitureController();
             DialogResult a = MessageBox.Show("Voulez vous supprimer", "Message", MessageBoxButtons.YesNo);
             if (a == DialogResult.Yes)
             {
                 string reference = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                Boolean test=vc.remove(reference);
-                if(test==true)
+                Boolean test = vc.remove(reference);
+                if (test == true)
                 {
                     MessageBox.Show("Cette voiture est déjà supprimé", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -57,9 +47,8 @@ namespace Car_Managment_System.View
             }
             else
             {
-                MessageBox.Show("Annuler de supprimer cette voiture","Message",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                MessageBox.Show("Annuler de supprimer cette voiture", "Message", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            
         }
 
         private void btRefrersh_Click(object sender, EventArgs e)
@@ -70,7 +59,23 @@ namespace Car_Managment_System.View
         private void btUpdate_Click(object sender, EventArgs e)
         {
             UpdateCar u = new UpdateCar();
+            u.setOldREf(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            u.txtReference.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            u.txtMarque.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString() ;
+            u.txtPrixJour.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString(); ;
             u.Show();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = vc.search(txtSearch.Text.ToString());
+        }
+
+        private void btBack_Click(object sender, EventArgs e)
+        {
+            Index i = new Index();
+            i.Show();
+            this.Hide();
         }
     }
 }

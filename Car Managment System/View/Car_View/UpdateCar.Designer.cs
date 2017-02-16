@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btAnnuler = new MetroFramework.Controls.MetroButton();
-            this.btAjouter = new MetroFramework.Controls.MetroButton();
+            this.btModifier = new MetroFramework.Controls.MetroButton();
             this.carburantCamboBox = new MetroFramework.Controls.MetroComboBox();
             this.txtPrixJour = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -47,14 +47,16 @@
             this.btAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btAnnuler.TabIndex = 20;
             this.btAnnuler.Text = "Annuler";
+            this.btAnnuler.Click += new System.EventHandler(this.btAnnuler_Click);
             // 
-            // btAjouter
+            // btModifier
             // 
-            this.btAjouter.Location = new System.Drawing.Point(74, 258);
-            this.btAjouter.Name = "btAjouter";
-            this.btAjouter.Size = new System.Drawing.Size(75, 23);
-            this.btAjouter.TabIndex = 19;
-            this.btAjouter.Text = "Modifier";
+            this.btModifier.Location = new System.Drawing.Point(74, 258);
+            this.btModifier.Name = "btModifier";
+            this.btModifier.Size = new System.Drawing.Size(75, 23);
+            this.btModifier.TabIndex = 19;
+            this.btModifier.Text = "Modifier";
+            this.btModifier.Click += new System.EventHandler(this.btModifier_Click);
             // 
             // carburantCamboBox
             // 
@@ -128,7 +130,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 301);
             this.Controls.Add(this.btAnnuler);
-            this.Controls.Add(this.btAjouter);
+            this.Controls.Add(this.btModifier);
             this.Controls.Add(this.carburantCamboBox);
             this.Controls.Add(this.txtPrixJour);
             this.Controls.Add(this.metroLabel4);
@@ -148,14 +150,14 @@
         #endregion
 
         private MetroFramework.Controls.MetroButton btAnnuler;
-        private MetroFramework.Controls.MetroButton btAjouter;
+        private MetroFramework.Controls.MetroButton btModifier;
         private MetroFramework.Controls.MetroComboBox carburantCamboBox;
-        private MetroFramework.Controls.MetroTextBox txtPrixJour;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroTextBox txtMarque;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroTextBox txtReference;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        public MetroFramework.Controls.MetroTextBox txtPrixJour;
+        public MetroFramework.Controls.MetroTextBox txtMarque;
+        public MetroFramework.Controls.MetroTextBox txtReference;
     }
 }

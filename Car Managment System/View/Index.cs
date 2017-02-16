@@ -25,5 +25,17 @@ namespace Car_Managment_System.View
             cm.Show();
             this.Hide();
         }
+
+        private void ClientTitle_Click(object sender, EventArgs e)
+        {
+            Clients_Managment cm = new Clients_Managment();
+            cm.Show();
+            this.Hide();
+        }
+
+        private void btExist_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

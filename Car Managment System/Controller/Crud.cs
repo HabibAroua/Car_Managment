@@ -10,5 +10,6 @@ namespace Car_Managment_System.Controller
     {
         Boolean add(Object o);
         Boolean remove(Object o);
+        Boolean uppdate(Object id, Object el);
     }
 }

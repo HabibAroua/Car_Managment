@@ -46,5 +46,10 @@ namespace Car_Managment_System.Controller
             }
             
         }
+
+        public Boolean uppdate(Object id, Object el)
+        {
+            return true;
+        }
     }
 }

@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,6 +48,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,20 +61,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ClientController.cs" />
     <Compile Include="Controller\CompteController.cs" />
     <Compile Include="Controller\Crud.cs" />
     <Compile Include="Controller\Cryptage.cs" />
+    <Compile Include="Controller\IService1.cs" />
+    <Compile Include="Controller\OrganizationController.cs" />
     <Compile Include="Controller\PLSQL.cs" />
     <Compile Include="Controller\UtilisateurController.cs" />
     <Compile Include="Controller\VoitureController.cs" />
+    <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Compte.cs" />
+    <Compile Include="Model\Organization.cs" />
     <Compile Include="Model\Utilisateur.cs" />
     <Compile Include="Model\Voiture.cs" />
-    <Compile Include="View\AddCar.cs">
+    <Compile Include="View\Car_View\AddCar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AddCar.Designer.cs">
+    <Compile Include="View\Car_View\AddCar.Designer.cs">
       <DependentUpon>AddCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients_View\Client_View\AddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Clients_View\Client_View\AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients_View\Client_View\UpdateClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Clients_View\Client_View\UpdateClient.Designer.cs">
+      <DependentUpon>UpdateClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients_View\Organization_View\Add_Organization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Clients_View\Organization_View\Add_Organization.Designer.cs">
+      <DependentUpon>Add_Organization.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Authentification.cs">
       <SubType>Form</SubType>
@@ -81,11 +107,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\Car_Managment.cs">
+    <Compile Include="View\Car_View\Car_Managment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Car_Managment.Designer.cs">
+    <Compile Include="View\Car_View\Car_Managment.Designer.cs">
       <DependentUpon>Car_Managment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients_View\Clients_Managment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Clients_View\Clients_Managment.Designer.cs">
+      <DependentUpon>Clients_Managment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients_View\Client_View\Client_Managment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Clients_View\Client_View\Client_Managment.Designer.cs">
+      <DependentUpon>Client_Managment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients_View\Organization_View\Uppdate_Organization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Clients_View\Organization_View\Uppdate_Organization.Designer.cs">
+      <DependentUpon>Uppdate_Organization.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Index.cs">
       <SubType>Form</SubType>
@@ -93,14 +137,35 @@
     <Compile Include="View\Index.Designer.cs">
       <DependentUpon>Index.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Clients_View\Organization_View\Organization_Managment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Clients_View\Organization_View\Organization_Managment.Designer.cs">
+      <DependentUpon>Organization_Managment.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Suscribecs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Suscribecs.Designer.cs">
       <DependentUpon>Suscribecs.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\AddCar.resx">
+    <Compile Include="View\Car_View\UpdateCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Car_View\UpdateCar.Designer.cs">
+      <DependentUpon>UpdateCar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Car_View\AddCar.resx">
       <DependentUpon>AddCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Clients_View\Client_View\AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Clients_View\Client_View\UpdateClient.resx">
+      <DependentUpon>UpdateClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Clients_View\Organization_View\Add_Organization.resx">
+      <DependentUpon>Add_Organization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
@@ -114,14 +179,29 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Car_Managment.resx">
+    <EmbeddedResource Include="View\Car_View\Car_Managment.resx">
       <DependentUpon>Car_Managment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Clients_View\Clients_Managment.resx">
+      <DependentUpon>Clients_Managment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Clients_View\Client_View\Client_Managment.resx">
+      <DependentUpon>Client_Managment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Clients_View\Organization_View\Uppdate_Organization.resx">
+      <DependentUpon>Uppdate_Organization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Clients_View\Organization_View\Organization_Managment.resx">
+      <DependentUpon>Organization_Managment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Suscribecs.resx">
       <DependentUpon>Suscribecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Car_View\UpdateCar.resx">
+      <DependentUpon>UpdateCar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

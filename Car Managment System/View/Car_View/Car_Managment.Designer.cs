@@ -35,19 +35,21 @@
             this.btRefrersh = new MetroFramework.Controls.MetroTile();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btBack = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(93, 154);
+            this.txtSearch.Location = new System.Drawing.Point(196, 154);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(159, 23);
             this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(39, 63);
+            this.btAdd.Location = new System.Drawing.Point(142, 63);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(75, 66);
             this.btAdd.TabIndex = 1;
@@ -57,7 +59,7 @@
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(139, 63);
+            this.btDelete.Location = new System.Drawing.Point(242, 63);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(75, 66);
             this.btDelete.TabIndex = 2;
@@ -66,7 +68,7 @@
             // 
             // btUpdate
             // 
-            this.btUpdate.Location = new System.Drawing.Point(253, 63);
+            this.btUpdate.Location = new System.Drawing.Point(356, 63);
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(75, 66);
             this.btUpdate.TabIndex = 3;
@@ -75,7 +77,7 @@
             // 
             // btRefrersh
             // 
-            this.btRefrersh.Location = new System.Drawing.Point(370, 63);
+            this.btRefrersh.Location = new System.Drawing.Point(473, 63);
             this.btRefrersh.Name = "btRefrersh";
             this.btRefrersh.Size = new System.Drawing.Size(75, 66);
             this.btRefrersh.TabIndex = 4;
@@ -85,7 +87,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(39, 154);
+            this.metroLabel1.Location = new System.Drawing.Point(142, 154);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(48, 19);
             this.metroLabel1.TabIndex = 6;
@@ -95,17 +97,27 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 206);
+            this.dataGridView1.Location = new System.Drawing.Point(142, 206);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(426, 150);
             this.dataGridView1.TabIndex = 8;
             // 
+            // btBack
+            // 
+            this.btBack.Location = new System.Drawing.Point(12, 73);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(75, 38);
+            this.btBack.TabIndex = 9;
+            this.btBack.Text = "Back";
+            this.btBack.Click += new System.EventHandler(this.btBack_Click);
+            // 
             // Car_Managment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 409);
+            this.ClientSize = new System.Drawing.Size(606, 417);
+            this.Controls.Add(this.btBack);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btRefrersh);
@@ -131,5 +143,6 @@
         private MetroFramework.Controls.MetroTile btRefrersh;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private MetroFramework.Controls.MetroButton btBack;
     }
 }

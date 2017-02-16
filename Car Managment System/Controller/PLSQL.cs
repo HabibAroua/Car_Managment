@@ -15,7 +15,7 @@ namespace Car_Managment_System.Controller
 
         public String PLSQL_Procedure(String p)
         {
-            return "Begin "+p+"end";
+            return "Begin "+p+" ; end ;";
         }
     }
 }
